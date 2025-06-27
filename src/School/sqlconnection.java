@@ -14,7 +14,7 @@ public class sqlconnection {
 			Connection conn = DriverManager
 					.getConnection("jdbc:sqlite:" + dbFile.getAbsolutePath() + "\\database.db");
 
-			System.out.println("Connection is successful");
+//			System.out.println("Connection is successful");
 			return conn;
 		} catch (Exception e) {
 			System.out.println("ERROR: " + e.getMessage());
