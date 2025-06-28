@@ -122,7 +122,7 @@ public class Khoa {
 			}
 		} catch (SQLException e) {
 //			e.printStackTrace();
-			System.out.println("Kiem tra khoa loi" + e.getMessage());
+//			System.out.println("Kiem tra khoa loi" + e.getMessage());
 		}
 		finally {
 			  if (conn != null) {
@@ -158,7 +158,7 @@ public class Khoa {
 			rs.close();
 		}catch (SQLException e) {
 //			e.printStackTrace();
-			System.out.println("Danh sach trong, hay tao khoa");
+//			System.out.println("Danh sach trong, hay tao khoa");
 		}
 		finally {
 			  if (conn != null) {
@@ -190,7 +190,7 @@ public class Khoa {
 			return id > 0;
 		} catch (SQLException e) {
 //			e.printStackTrace();
-			System.out.println("Kiem tra ten khoa loi" + e.getMessage());
+//			System.out.println("Kiem tra ten khoa loi" + e.getMessage());
 		}
 		finally {
 			  if (conn != null) {

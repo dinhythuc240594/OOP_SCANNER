@@ -82,10 +82,10 @@ public class MonHoc extends Khoa {
 		scanner.nextLine();
 		
 		// Display available Khoa for selection
-		System.out.println("\nDanh sách các khoa hiện có:");
+		System.out.println("\nDanh sach khoa hien co:");
 		DanhSachKhoa();
 		
-		System.out.print("Nhập tên khoa: ");
+		System.out.print("Nhap ten khoa: ");
 		tenkhoa = scanner.nextLine();
 		//// Validate input
 		if (sotinchi < 0 || tenMonHoc.isEmpty() || maMonHoc.isEmpty() || tenkhoa.isEmpty()) {
@@ -129,7 +129,7 @@ public class MonHoc extends Khoa {
 			return true;
 		} catch (SQLException e) {
 //			e.printStackTrace();
-			System.out.println("Them mon hoc loi" + e.getMessage());
+//			System.out.println("Them mon hoc loi" + e.getMessage());
 			return false;
 		}
 		finally {
@@ -178,7 +178,7 @@ public class MonHoc extends Khoa {
 			return true;
 		} catch(SQLException e) {
 //			e.printStackTrace();
-			System.out.println("Tai danh sach mon hoc loi" + e.getMessage());
+//			System.out.println("Tai danh sach mon hoc loi" + e.getMessage());
 		}
 		finally {
 			  if (conn != null) {
@@ -229,7 +229,7 @@ public class MonHoc extends Khoa {
 			
 		} catch (SQLException e) {
 //			e.printStackTrace();
-			System.out.println("Tai danh sach mon hoc cua khoa loi" + e.getMessage());
+//			System.out.println("Tai danh sach mon hoc cua khoa loi" + e.getMessage());
 		}
 		finally {
 			  if (conn != null) {
@@ -257,7 +257,7 @@ public class MonHoc extends Khoa {
 			return rowsAffected;
 			
 		} catch (SQLException e) {
-			System.err.println("Lỗi khi xóa môn học: " + e.getMessage());
+//			System.err.println("Lỗi khi xóa môn học: " + e.getMessage());
 			return -1;
 		}
 		finally {
@@ -336,7 +336,7 @@ public class MonHoc extends Khoa {
 				}
 			}
 		} catch (SQLException e) {
-			System.err.println("Lỗi khi kiểm tra môn học: " + e.getMessage());
+//			System.err.println("Lỗi khi kiểm tra môn học: " + e.getMessage());
 		}
 		finally {
 			  if (conn != null) {
@@ -377,7 +377,7 @@ public class MonHoc extends Khoa {
 				System.out.println("Không tìm thấy môn học có mã: " + mamh);
 			}
 		} catch (SQLException e) {
-			System.err.println("Lỗi khi hiển thị môn học: " + e.getMessage());
+//			System.err.println("Lỗi khi hiển thị môn học: " + e.getMessage());
 		}
 		finally {
 			  if (conn != null) {
@@ -410,7 +410,7 @@ public class MonHoc extends Khoa {
 			return true;
 			
 		} catch (SQLException e) {
-			System.err.println("Khong hien thi duocmon hoc: " + e.getMessage());
+//			System.err.println("Khong hien thi duocmon hoc: " + e.getMessage());
 		}
 		finally {
 			  if (conn != null) {
