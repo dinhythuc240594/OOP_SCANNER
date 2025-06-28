@@ -49,6 +49,9 @@ public class Khoa {
 	
 	public void NhapKhoa() {
 
+		System.out.println("Danh sach khoa hien co: ");
+		DanhSachKhoa();
+		
 		scanner = new Scanner(System.in);
 		System.out.print("Nhap ma khoa: ");
 		makhoa = scanner.nextInt();
@@ -89,7 +92,8 @@ public class Khoa {
 			pstmt.executeUpdate();
 			return true;
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
+			System.out.println("Them khoa loi" + e.getMessage());
 			return false;
 		}
 		finally {
@@ -117,7 +121,8 @@ public class Khoa {
 				return rs.getInt(1) == 0;
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
+			System.out.println("Kiem tra khoa loi" + e.getMessage());
 		}
 		finally {
 			  if (conn != null) {
@@ -152,7 +157,7 @@ public class Khoa {
 			pstmt.close();
 			rs.close();
 		}catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 			System.out.println("Danh sach trong, hay tao khoa");
 		}
 		finally {
@@ -184,7 +189,8 @@ public class Khoa {
 			rs.close();
 			return id > 0;
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
+			System.out.println("Kiem tra ten khoa loi" + e.getMessage());
 		}
 		finally {
 			  if (conn != null) {

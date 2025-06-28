@@ -103,10 +103,10 @@ public class MonHoc extends Khoa {
 		//// Try to add to database
 		if (ThemMonHoc(maMonHoc, tenMonHoc, sotinchi, tenkhoa)) {
 			System.out.println("Them thanh cong: ");
-			System.out.printf("Ma mon hoc: ", maMonHoc);
-			System.out.printf("Ten mon hoc: ", tenMonHoc);
-			System.out.printf("So tin chi: ", sotinchi);
-			System.out.printf("Khoa: ", tenkhoa);
+			System.out.println("Ma mon hoc: " + maMonHoc);
+			System.out.println("Ten mon hoc: " + tenMonHoc);
+			System.out.println("So tin chi: " + sotinchi);
+			System.out.println("Khoa: " + tenkhoa);
 		} else {
 			System.out.println("That bai!");
 		}
@@ -128,7 +128,8 @@ public class MonHoc extends Khoa {
 			pstmt.executeUpdate();
 			return true;
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
+			System.out.println("Them mon hoc loi" + e.getMessage());
 			return false;
 		}
 		finally {
@@ -166,8 +167,8 @@ public class MonHoc extends Khoa {
 			PreparedStatement pstmt = conn.prepareStatement(query);
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
-				String mamh = rs.getString("mamh");
-				String tenmh = rs.getString("tenmh");
+				String mamh = rs.getString("mamonhoc");
+				String tenmh = rs.getString("tenmonhoc");
 				int sotinchi = rs.getInt("sotinchi");
 				String tenkhoa = rs.getString("tenkhoa");
 						
@@ -176,7 +177,8 @@ public class MonHoc extends Khoa {
 			}
 			return true;
 		} catch(SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
+			System.out.println("Tai danh sach mon hoc loi" + e.getMessage());
 		}
 		finally {
 			  if (conn != null) {
@@ -226,7 +228,8 @@ public class MonHoc extends Khoa {
 			}
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
+			System.out.println("Tai danh sach mon hoc cua khoa loi" + e.getMessage());
 		}
 		finally {
 			  if (conn != null) {
@@ -362,7 +365,7 @@ public class MonHoc extends Khoa {
 			pstmt.setString(1, mamh);
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
-				String tenmh = rs.getString("tenmh");
+				String tenmh = rs.getString("tenmonhoc");
 				int sotinchi = rs.getInt("sotinchi");
 				String tenkhoa = rs.getString("tenkhoa");
 					
@@ -390,7 +393,7 @@ public class MonHoc extends Khoa {
 	private boolean CapNhatMonHoc(String maMh, String tenMh, int sotinchi, String tenKh) {
 		
 		String sql = "UPDATE MONHOC SET tenmonhoc = ?, sotinchi = ?, tenkhoa = ? " +
-				"WHERE mh.mamonhoc = ?";
+				"WHERE mamonhoc = ?";
 	
 	try {
 	
